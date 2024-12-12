@@ -1,0 +1,262 @@
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+
+
+/* * Css Reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    }
+
+    /* Projede kullanılacak renkler */
+:root {
+    --green: #16ff00;
+    --white: #f5f5f5;
+    --gray: #cdcccc;
+    --black: #121212;
+
+    
+  }
+
+
+
+
+  a{
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  h1{
+    font-family: "Inter", serif;
+  }
+
+  button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 7px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+
+  button:hover{
+  box-shadow: 0 0 60px rgb(223, 223, 223);
+  scale: 0.8;
+  
+  }
+
+
+
+  body{
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+/*? Header */
+
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+header h1{
+  text-shadow: 0 0 40px rgb(223, 223, 223);
+}
+
+nav{
+  display: flex;
+  gap: 20px;
+
+}
+
+nav .speacial{
+  color: var(--green);
+}
+
+
+header button{
+font-size: 20px;
+display: none;
+}
+
+/*? Hero */
+
+
+#hero{
+  background-image: url(back.jpg);
+  height: 50vh;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: start;
+}
+
+#hero .hero-box{
+  max-width: 500px;
+  margin-left: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  /* From https://css.glass */
+background: rgba(3, 100, 255, 0.29);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+border: 1px solid rgba(3, 100, 255, 0.25);
+}
+#hero .hero-box h1{
+  color: var(--green);
+}
+
+#hero .hero-box div{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#hero .hero-box div button:first-child{
+  background-color: var(--green);
+ }
+  /* Windows */
+main section{
+  padding: 30px
+}
+  #window-sec{
+    
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  #window-sec .info{
+    max-width: 600px;
+ display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 30px;
+  }
+
+  #window-sec .info button{
+    max-height: 50px;
+
+}
+
+#window-sec .windows{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.window {
+  height: 400px;
+  min-width: 200px;
+  background-image: url("./sec2(4).jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  border-radius: 40px 40px 0 0;
+}
+
+.window:nth-child(2){
+  border-radius: 40px;
+}
+
+/* Cards */
+
+#cards-sec .info{
+ display: flex;
+ flex-direction: column;
+ gap: 30px;
+ max-width: 800px;
+ padding: 30px;
+}
+#cards-sec .cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 90px;
+  margin: 50px 0;
+}
+
+.card {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid gray;
+  padding: 20px;
+  border-radius: 10px;
+}
+.card video{
+  width: 100%;
+  max-width: 300px;
+}
+
+/*! Responsive Kısımı */
+@media (max-width:1200px){
+  #window-sec{
+    flex-direction: column;
+    align-items: center;
+    gap: 50px
+  }
+}
+@media (max-width:850px) {
+  /* Header  */
+  header button{
+    display: block;
+  }
+
+  header nav{
+    display: none;
+  }
+  header nav.open{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    right: 15px;
+    top: 100px;
+    background-color: gray;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+  }
+  nav a {
+    padding: 10px;
+    border-radius: 10px;
+  }
+  nav a:hover {
+    background-color: #121212;
+  }
+  /* Hero */
+  #hero{
+    justify-content: center;
+
+  }
+  /* Windows */
+  .window {
+    min-width: 100px;
+  }
+}
+
+
+@media (max-width:550px) {
+  #hero .hero-box{
+    max-width: 400px;
+  }
+}
